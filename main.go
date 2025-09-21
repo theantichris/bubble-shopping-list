@@ -76,17 +76,17 @@ func (model model) View() string {
 	view := "What should we buy at the market?\n\n"
 
 	// iterate over the choices
-	for choicesIndex, choice := range model.choices {
+	for choiceIndex, choice := range model.choices {
 		cursor := " "  // no cursor
 		checked := " " // not selected
 
 		// is the cursor pointing at this choice?
-		if model.cursor == choicesIndex {
+		if model.cursor == choiceIndex {
 			cursor = ">" // show cursor
 		}
 
 		// is this choice selected?
-		if _, ok := model.selected[choicesIndex]; ok {
+		if _, ok := model.selected[choiceIndex]; ok {
 			checked = "x" // selected
 		}
 
