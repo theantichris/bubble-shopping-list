@@ -16,6 +16,6 @@
 └────────────────────────┘
 ```
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/theantichris/assistant-go.svg)](https://pkg.go.dev/github.com/theantichris/assistant-go) [![CI](https://github.com/theantichris/assistant-go/actions/workflows/go.yml/badge.svg)](https://github.com/theantichris/assistant-go/actions/workflows/go.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/theantichris/bubble-shopping-list.svg)](https://pkg.go.dev/github.com/theantichris/bubble-shoping-list) [![CI](https://github.com/theantichris/bubble-shopping-list/actions/workflows/go.yml/badge.svg)](https://github.com/theantichris/bubble-shopping-list/actions/workflows/go.yml)
 
 A shopping list app written in Go and using [Bubble Tea](https://github.com/charmbracelet/bubbletea). Created following their tutorial
