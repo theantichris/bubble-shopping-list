@@ -32,3 +32,19 @@ API server listening at: 127.0.0.1:43000
 # Connect to it from another terminal
 $ dlv connect 127.0.0.1:43000
 ```
+
+## Logging
+
+You can't log to stdout with Bubble Tea. You can log to a file before starting the Bubble Tea program. To see what’s being logged in real time, run `tail -f debug.log` while you run your program in another window.
+
+```go
+if len(os.Getenv("DEBUG")) > 0 {
+  f, err := tea.LogToFile("debug.log", "debug")
+  if err != nil {
+    fmt.Println("fatal:", err)
+    os.Exit(1)
+  }
+
+  defer f.Close()
+}
+```
