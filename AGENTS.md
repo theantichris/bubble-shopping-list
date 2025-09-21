@@ -10,8 +10,10 @@ A shopping list TUI application built with Go and [Bubble Tea](https://github.co
 
 ### Build and Run
 
-- `go run ./cmd/bubble-shopping-list` - Run the TUI application locally (main entry point will be moved here)
-- `go build ./cmd/bubble-shopping-list` - Build the CLI binary
+- `go run .` - Run the TUI application locally (current main.go implementation)
+- `go build .` - Build the application binary
+- `go run ./cmd/bubble-shopping-list` - Run the TUI application locally (future: main entry point will be moved here)
+- `go build ./cmd/bubble-shopping-list` - Build the CLI binary (future)
 - `go build -v ./...` - Build all packages with verbose output
 
 ### Testing and Quality
