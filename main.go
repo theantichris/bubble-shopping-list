@@ -1,6 +1,10 @@
 package main
 
-import tea "github.com/charmbracelet/bubbletea"
+import (
+	"fmt"
+
+	tea "github.com/charmbracelet/bubbletea"
+)
 
 func main() {
 
@@ -58,6 +62,37 @@ func (model model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 	// return the update model to the Bubble Tea runtime for processing.
 	return model, nil
+}
+
+// View renders the UI based on the application state.
+func (model model) View() string {
+	// the header
+	view := "What should we buy at the market?\n\n"
+
+	// iterate over the choices
+	for choicesIndex, choice := range model.choices {
+		cursor := " "  // no cursor
+		checked := " " // not selected
+
+		// is the cursor pointing at this choice?
+		if model.cursor == choicesIndex {
+			cursor = ">" // show cursor
+		}
+
+		// is this choice selected?
+		if _, ok := model.selected[choicesIndex]; ok {
+			checked = "x" // selected
+		}
+
+		// render the choice's row
+		view += fmt.Sprintf("%s [%s] %s\n", cursor, checked, choice)
+	}
+
+	// footer
+	view += "\nPress q to quit.\n"
+
+	// send to UI for rendering
+	return view
 }
 
 // initialModel returns the initial application state.
